@@ -104,7 +104,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/BYC-Sophie/mas-to-mars" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -139,6 +139,10 @@
           <div class="image-container">
               <img src="static/images/overview.png" alt="Study Design Pipeline">
               <h2 class="subtitle">
+                We designed a controlled test case in a healthcare setting that simulates real-world complexity, serving as a testbed to examine how hierarchical MARS systems operate under high-stakes conditions. Our exploration goes beyond surfacing coordination patterns by analyzing how three factors shape system-level performance: contextual knowledge, communication structures, and model reasoning. κ = 1 indicates the
+                inclusion of contextual and procedural knowledge, while κ = 0 corresponds to its absence. σ = 1 denotes an enhanced
+                communication structure, and σ = 0 reflects its absence. ω specifies the underlying model, either GPT-4o-2024-08-06
+                or o3-2025-04-16.
               </h2>
           </div>
       </div>
@@ -170,9 +174,9 @@
   <div class="hero-body">
       <div class="container">
           <div class="image-container">
-              <img src="static/images/study1.png" alt="Study Design Pipeline">
+              <img src="static/images/study1.png" alt="Study 1: Contextual Knowledge">
               <h2 class="subtitle">
-                  df
+                We developed a knowledge base (KB) containing contextual and procedural knowledge as a shared resource, analogous to organizational documentation, to ground MARS team behavior and decision-making. We evaluated the effectiveness of this contextual knowledge on MARS performance at both the manager and subordinate levels across seven dimensions. Our analysis shows that five critical failure modes persist even with a detailed KB (annotated example traces are attached below in section "Coordination Failure Modes below"). These findings indicate that while sufficient contextual knowledge is necessary, system structure remains the primary bottleneck for achieving robust coordination.
               </h2>
           </div>
       </div>
@@ -185,10 +189,10 @@
   <div class="hero-body">
       <div class="container">
           <div class="image-container">
-              <img src="static/images/study2.png" alt="Study Design Pipeline">
-              <h2 class="subtitle">
+              <img src="static/images/study2.png" alt="Study 2: Structure and Reasoning">
+              <!-- <h2 class="subtitle">
                   We began with four QA data sources. All questions were consolidated and structured into two components: patient profile and query. In the first step, physician trainee labelers and LLMs independently selected the best answer. In the second step, physicians experts then annotated the relevance of each sentence in the patient profile. We excluded annotations from physician trainees who selected incorrect answers and applied majority voting to derive binary sentence-level relevance labels. In parallel, we also asked LLMs to label each sentence in Patient Profile through prompting and ContextCite.
-              </h2>
+              </h2> -->
           </div>
       </div>
   </div>
@@ -201,9 +205,13 @@
   <div class="hero-body">
       <div class="container">
           <div class="image-container">
-              <img src="static/images/cards.png" alt="Study Design Pipeline">
+              <img src="static/images/cards.png" alt="Study 2: Reasoning Behavior Cards">
               <h2 class="subtitle">
-                  We began with four QA data sources. All questions were consolidated and structured into two components: patient profile and query. In the first step, physician trainee labelers and LLMs independently selected the best answer. In the second step, physicians experts then annotated the relevance of each sentence in the patient profile. We excluded annotations from physician trainees who selected incorrect answers and applied majority voting to derive binary sentence-level relevance labels. In parallel, we also asked LLMs to label each sentence in Patient Profile through prompting and ContextCite.
+                We identify four major themes in MARS coordination patterns, each comprising several sub-themes (Table 5). To
+                contextualize these sub-themes, we annotate each with ‘✓’ or ‘✗’ to indicate whether its implications are positive or
+                negative within our test scenario. We also report the frequency of each sub-theme across 20 traces for both GPT-4o and
+                o3. We find distinct behavioral profiles which underscore trade-offs between reasoning and non-reasoning models. For each sub-theme, we provide representative examples along
+                with accompanying comments (red box: [What went wrong:], green box: [What went well:]) in section "Reasoning Behavior Cards" below.
               </h2>
           </div>
       </div>

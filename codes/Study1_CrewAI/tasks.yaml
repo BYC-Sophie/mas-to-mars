@@ -1,0 +1,54 @@
+navigate_HCW:
+  description: >
+    The scenario observed: {scenario_navigate}
+    Now the task is to guide the human care worker to the designated location.
+  expected_output: >
+    A JSON format with the following fields:
+    - Task Return:
+      -- Location information
+      -- Path planned
+    - Task Status:
+      -- "failure" or "success" 
+      -- If failure, report issues that prevent task completion.
+
+collect_info:
+  description: >
+    The scenario observed: {scenario_collect}
+    Now the task is to collect information from the human care worker.
+  expected_output: >
+    A JSON format with the following fields:
+    - Task Return:
+      -- ID
+      -- Name
+      -- Specialty
+    - Task Status:
+      -- "failure" or "success"
+      -- If failure, report issues that prevent task completion.
+
+display_info:
+  description: >
+    The scenario observed: {scenario_display}
+    Now the task is to get the information to display and develop a plan to lay out the information on the information sharing display.
+  expected_output: >
+    A JSON format with the following fields:
+    - Task Return:
+      -- The information to be displayed on the information sharing display
+      -- A brief plan of how to lay out the information on the information sharing display
+    - Task Status:
+      -- "failure" or "success"
+      -- If failure, report issues that prevent task completion.
+
+reflection_task:
+  description: >
+    Reflect on the entire process of crew collaboration and generate a reflection report highlighting Task Outcomes, Recovery Attempts, and Lessons Learned from the process.
+  expected_output: >
+    A JSON format with the following fields:
+    - Task Return:
+      -- A report on the reflection of crew collaboration in text format including the following sections:
+        --- Task Outcomes
+        --- Recovery Attempts
+        --- Lessons Learned from the Process
+    - Task Status:
+      -- "failure" or "success"
+      -- If failure, report issues that prevent task completion.
+

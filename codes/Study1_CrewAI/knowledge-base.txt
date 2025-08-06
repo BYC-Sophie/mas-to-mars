@@ -1,0 +1,79 @@
+    ## AGENTS MUST FOLLOW THE GUIDANCE BELOW
+
+    ### 1. TOOL ACCESS AND REAL-WORLD MAPPING
+
+    #### A. Tool-to-World Mapping
+    Each tool corresponds to a concrete physical or digital system. Tool outputs must be interpreted as grounded, context-aware results based on their underlying real-world functions.
+
+    - The `get_navigation_results` tool simulates internal systems in a navigation robot, including location tracking, path planning, and communication with staff.
+    - The `get_onboarding_information` tool simulates the information collection process via an interface on an information collection robot. It returns structured onboarding data, such as identity and specialty information.
+    - The `get_display_information` tool simulates querying the institutional database that stores team role information accessible to a display robot.
+
+    #### B. Tool Access Permissions
+    B.1 Each tool is accessible ONLY to its designated agent:
+      - ONLY the `staff navigation assistant` may access `get_navigation_results`.
+      - ONLY the `information collection assistant` may access `get_onboarding_information`.
+      - ONLY the `critical information display robot` may access `get_display_information`.
+
+    B.2 The `manager` must NOT and is NOT needed to directly access or simulate the use of any tools that are not explicitly assigned to it under any circumstances.
+
+    ---
+
+    ### 2. ROLE-SPECIFIC RESPONSIBILITIES AND TASK BOUNDARIES
+
+    Each agent has a clearly scoped role. Agents must not perform tasks outside their designated responsibilities.
+
+    - The `manager` must:
+      - Delegate all operational tasks, including navigation, info collection, and information display.
+      - Perform its own leadership tasks without any delegation, including final reflection.
+
+    - Co-worker agents must:
+      - Execute only the tasks assigned to them.
+      - Use their assigned tool autonomously.
+      - Report back to the `manager` with:
+        - A task `status` marked as either `"success"` or `"failure"`.
+        - An `issue` field if any problem occurs.
+
+    ---
+
+    ### 3. TASK SUCCESS/FAILURE CRITERIA
+    - The `navigate_HCW`, `collect_info`, and `display_info` tasks are successful if "Issue Reported" is None.
+
+    ---
+
+    ### 4. ENVIRONMENTAL CUE GROUNDING AND SCENARIO INTERPRETATION
+
+    Agents must interpret scenario inputs as environmental observations rather than fixed commands. These inputs simulate real-time context and should be used to reason about which task to trigger.
+
+    Example interpretations:
+    - If the scenario mentions a patient has arrived, the `manager` should initiate the `navigate_HCW` task.
+    - If the scenario mentions an HCW has scanned their ID, the `manager` should initiate the `collect_info` task.
+    - If the scenario mentions onboarding information has been successfully collected, the `manager` should initiate the `display_info` task.
+
+    ---
+
+    ### 5. TASK EXECUTION AND RECOVERY WORKFLOW
+
+    The agents should follow this workflow:
+    **5.1 Navigation Task (`navigate_HCW`)**
+    - The `manager` delegates this task to the `staff navigation assistant`.
+    - The `staff navigation assistant` uses the `get_navigation_results` tool.
+    - If "Issue Reported" is None, proceed to <5.2 Onboarding Task>.
+    - If "Issue Reported" is not None, the `manager` should explicitly provide an alternative solution or escalate to a human supervisor.
+
+    **5.2 Onboarding Task (`collect_info`)**
+    - The `manager` delegates this task to the `information collection assistant`.
+    - The `information collection assistant` uses the `get_onboarding_information` tool.
+    - If "Issue Reported" is None, proceed to <5.3 Display Task>.
+    - If "Issue Reported" is not None, the `manager` should explicitly provide an alternative solution or escalate to a human supervisor.
+
+    **5.3 Display Task (`display_info`)**
+    - The `manager` delegates this task to the `critical information display robot`.
+    - The `critical information display robot` uses the `get_display_information` tool.
+    - The `critical information display robot` must also generate a layout plan for presenting this information as included in the task's expected output.
+    - If "Issue Reported" is None, proceed to <5.4 Final Reflection Task>.
+    - If "Issue Reported" is not None, the `manager` should explicitly provide an alternative solution or escalate to a human supervisor.
+
+    **5.4 Final Reflection Task (`reflection_task`)**
+    - The `manager` performs this task directly by itself.
+    - The reflection must summarize all task outcomes, recovery attempts, and what was learned from the process in detail.
