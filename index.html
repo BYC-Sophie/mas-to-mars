@@ -60,7 +60,7 @@
                 <span class="author-block">
                   <a href="https://jason-ding.com/" target="_blank">Zijian Ding</a><sup>2</sup>,</span>
                   <span class="author-block">
-                    <a href="https://jewelina95.github.io/Jewelina/" target="_blank">Shaoyue Wen</a><sup>3</sup>,</span>
+                    <a href="https://jewelina95.github.io/Jewelina/" target="_blank">Shaoyue Wen</a><sup>3,4</sup>,</span>
                   </span>
                     <span class="author-block">
                       <a href="https://scholar.google.com/citations?user=k_03qNkAAAAJ&hl=en" target="_blank">Xiang Chang</a><sup>1</sup>,</span>
@@ -72,8 +72,9 @@
 
                   <div class="is-size-5 publication-authors">
                     <span><sup>1</sup> Cornell University</span>,
-                    <span><sup>2</sup> University of Maryland</span>,
-                    <span><sup>3</sup> Imperial College London</span>,
+                    <span><sup>2</sup> University of Maryland, College Park</span>,
+                    <span><sup>3</sup> Imperial College London</span>
+                    <span><sup>4</sup> New York University</span>
                     <!-- <span class="author-block">Cornell University, University of Maryland, Imperial College London<br>Conferance name and year</span> -->
                     <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
@@ -82,7 +83,7 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://arxiv.org/pdf/2508.04691.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -115,7 +116,7 @@
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://arxiv.org/abs/2508.04691" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -187,7 +188,7 @@
           <div class="image-container">
               <img src="static/images/study1-2.png" alt="Study 1: Contextual Knowledge">
               <h2 class="subtitle">
-                We developed a knowledge base (KB) containing contextual and procedural knowledge as a shared resource, analogous to organizational documentation, to ground MARS team behavior and decision-making. We evaluated the effectiveness of this contextual knowledge on MARS performance at both the manager and subordinate levels across seven dimensions. Our analysis shows that five critical failure modes persist even with a detailed KB (annotated example traces are attached below in section "Coordination Failure Modes below"). These findings indicate that while sufficient contextual knowledge is necessary, system structure remains the primary bottleneck for achieving robust coordination.
+                We developed a knowledge base (KB) containing contextual and procedural knowledge as a shared resource, analogous to organizational documentation, to ground MARS team behavior and decision-making. We evaluated the effectiveness of this contextual knowledge on MARS performance at both the manager and subordinate levels across seven dimensions. Our analysis shows that five critical failure modes persist even with a detailed KB. Annotated example traces are attached below in section "Coordination Failure Modes" below. These findings indicate that while sufficient contextual knowledge is necessary, system structure remains the primary bottleneck for achieving robust coordination.
               </h2>
           </div>
       </div>
@@ -218,11 +219,11 @@
           <div class="image-container">
               <img src="static/images/cards.png" alt="Study 2: Reasoning Behavior Cards">
               <h2 class="subtitle">
-                We identify four major themes in MARS coordination patterns, each comprising several sub-themes (Table 5). To
+                We identify four major themes in MARS coordination patterns, each comprising several sub-themes. To
                 contextualize these sub-themes, we annotate each with ‘✓’ or ‘✗’ to indicate whether its implications are positive or
                 negative within our test scenario. We also report the frequency of each sub-theme across 20 traces for both GPT-4o and
                 o3. We find distinct behavioral profiles which underscore trade-offs between reasoning and non-reasoning models. For each sub-theme, we provide representative examples along
-                with accompanying comments (red box: [What went wrong:], green box: [What went well:]) in section "Reasoning Behavior Cards" below.
+                with accompanying comments (green box: [What went well:], red box: [What went wrong:]) in section "Reasoning Behavior Cards" below.
               </h2>
           </div>
       </div>
@@ -264,7 +265,15 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@misc{bai2025masmarscoordinationfailures,
+        title={From MAS to MARS: Coordination Failures and Reasoning Trade-offs in Hierarchical Multi-Agent Robotic Systems within a Healthcare Scenario}, 
+        author={Yuanchen Bai and Zijian Ding and Shaoyue Wen and Xiang Chang and Angelique Taylor},
+        year={2025},
+        eprint={2508.04691},
+        archivePrefix={arXiv},
+        primaryClass={cs.RO},
+        url={https://arxiv.org/abs/2508.04691}, 
+  }</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
